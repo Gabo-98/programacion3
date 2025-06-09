@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reseña Histórica - Dirección General de Estadísticas</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+
+  <header>
+    <div class="navbar">
+      <a href="/"><img src="../assets/logo/logo.png" alt="Logo Dirección General de Estadística y Censos"></a>
+        <div class="nav-links">
+          <button class="dropbtn" onclick="window.location.href='/'">Inicio</button>
+          <div class="dropdown">
+            <button class="dropbtn">Institucional</button>
+            <div class="dropdown-content">
+              <a href="/institucional">Reseña Histórica</a>
+              <a href="/organigrama">Organigrama</a>
+              <a href="/autoridades">Autoridades</a>
+              <a href="/mision-y-vision">Misión y Visión</a>
+              <a href="/leyes">Marco Legal</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Definiciones</button>
+            <div class="dropdown-content">
+              <a href="/biblioteca">Biblioteca</a>
+              <a href="/definicion-palabras">Definición de Palabras</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Estadísticas</button>
+            <div class="dropdown-content">
+              <a href="/anuarios">Anuarios Estadísticos</a>
+              <a href="/indicadores">Indicadores Clave</a>
+              <a href="/publicaciones">Publicaciones</a>
+              <a href="/ipc">IPC</a>
+              <a href="/EPH">EPH</a>
+              <a href="/producto-bruto-geografico">Producto Bruto</a>
+            </div>
+          </div>
+          
+          <div class="dropdown">
+            <button class="dropbtn">Encuestadores</button>
+            <div class="dropdown-content">
+              <a href="/encuestadores">Listado de Encuestadores</a>
+              <a href="/validacionEncuestador">Validar Encuestador</a>
+              <a href="/materiales">Materiales</a>
+              <a href="/calendario">Calendario</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Territorio</button>
+            <div class="dropdown-content">
+              <a href="/mapa-provincial">Mapa Provincial</a>
+              <a href="/departamentos">Departamentos</a>
+              <a href="/localidades">Localidades</a>
+              <a href="/censos">Datos Censales</a>
+              <a href="/cartografia">Recursos Cartograficos</a>
+            </div>
+          </div>
+          <button class="dropbtn" onclick="window.location.href='/noticias'">Noticias</button>
+          <button class="dropbtn" onclick="window.location.href='/ubicacion'">¿Donde estamos?</button>
+
+        </div>
+      <button id="toggleThemeBtn" title="Cambiar modo oscuro/claro">
+        <span class="dark-icon">☀️</span>
+        <span class="light-icon">🌙</span>
+        </button>
+      
+      <script>
+          const btn = document.getElementById('toggleThemeBtn');
+          btn.addEventListener('click', () => {
+              document.body.classList.toggle('dark-mode');
+              
+              // Cambiar iconos
+              const lightIcon = document.querySelector('.light-icon');
+              const darkIcon = document.querySelector('.dark-icon');
+              
+              if(document.body.classList.contains('dark-mode')) {
+                  lightIcon.style.display = 'none';
+                  darkIcon.style.display = 'inline';
+              } else {
+                  lightIcon.style.display = 'inline';
+                  darkIcon.style.display = 'none';
+              }
+          });
+      </script>
+      </header>
+
+</div>
+
+  <div class="content">
+    <h2>Reseña Histórica</h2>
+    <p>
+      El 11 de Septiembre del año 1911 la Honorable Legislatura Provincial sancionó la Ley Nº 362 creando la Dirección General de Estadísticas.
+      He aquí algo de lo que se ejecutó en estos 108 años de vida institucional.
+    </p>
+
+    <h2>Censos Nacionales</h2>
+    <p>
+      De población y viviendas en 1914, 1947, 1960, 1970, 1980, 1991, 2001, 2010 y 2022. También se realizaron Censos Nacionales Agropecuarios,
+      agrícolas y/o ganaderos, Mineros, Industriales, Económicos Generales, Bancarios de Mutualidades, de beneficiarios de Cajas de Jubilaciones,
+      Hipotecarios, carcelarios, Escolares Universitarios, de Desocupados, de Personal Civil de la Administración, de Obreros, de tránsito de la Red
+      Nacional de Caminos, de Asociación de Profesionales e Indígenas. En lo que respecta a Censos y Encuestas Provinciales se elaboraron estadísticas
+      económicas provinciales en forma permanente, estadísticas demográficas y sociales y tareas técnico-estadísticas.
+    </p>
+
+    <h2>Otras de las metas cumplidas por esta Dirección General son las Publicaciones entre ellas podemos nombrar:</h2>
+    <ul class="publication-list">
+      <li>Ternado para el Premio Provincial a la Calidad e Innovación en la Gestión Pública Año 2019.</li>
+      <li>Publicaciones bianuales “Salta en cifras” en ocasiones de cada FERINOA.</li>
+      <li>Publicaciones anuales “Anuario Estadístico de Salta” en formato digital e impreso.</li>
+      <li>Publicaciones estadísticas aperiódicas varias.</li>
+      <li>Publicaciones mensuales de eventos provinciales, nacionales e internacionales, con breves reseñas históricas y estadísticas.</li>
+      <li>Publicaciones en el sitio web.</li>
+      <li>Publicación de la Carta de Servicios de la Institución.</li>
+      <li>Recopilación permanente de información estadística y publicaciones de otros organismos o servicios.</li>
+      <li>Mención Especial Premio a la Calidad en el Servicio al Ciudadano 2001 - “CREDIBILIDAD DE LA ORGANIZACIÓN”.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <div class="footer-section">
+      <img src="../assets/logo/logo.png" alt="Logo Dirección de Estadística y Censo" class="footer-logo">
+      <span class="footer-title">Dirección de Estadística y Censo</span>
+      <span>Provincia de Santiago del Estero</span>
+      <span>Av. Belgrano Sur 191 - (4200) Santiago del Estero</span>
+      <span>Tel: (0385) 421-9003 / 421-3169</span>
+      <span>Email: direcciondeestadisticaysc@gmail.com</span>
+      <br>
+    </div>
+   
+    <div class="footer-section">
+      
+      <br>
+      <span class="footer-title">ORGANISMOS PÚBLICOS PROVINCIALES</span>
+      <span>Gobernación</span>
+      <span>Ministerio de Gobierno</span>
+      <span>Ministerio de Educación</span>
+      <div>
+        
+        <span>Ministerio de Salud</span>
+        <span>Ministerio de Hacienda</span>
+        <span>Ministerio de Desarrollo Social</span>
+        <span>Ministerio de Producción</span>
+      </div>
+    </div>
+    <div class="footer-section indec-section">
+      <img src="../assets/logo/Indec_logo.png" alt="Logo INDEC" class="footer-logo-indec">
+
+      <span class="footer-title">Instituto Nacional de Estadística y Censos</span>
+      <span>República Argentina</span>
+    </div>
+
+  
+  </div>
+            
+  </div>
+
+  <div class="arrow" id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+    <img id="scrollArrow" src="../assets/interfase/flecha-arriba.png" alt="Subir" width="40">
+  </div>
+  <script>
+    const toggleBtn = document.getElementById('toggleThemeBtn');
+    const scrollArrow = document.getElementById('scrollArrow');
+    
+    toggleBtn.addEventListener('click', () => {
+      if(document.body.classList.contains('dark-mode')) {
+        scrollArrow.src = "../assets/interfase/flecha-arriba-blanco.png";
+      } else {
+        scrollArrow.src = "../assets/interfase/flecha-arriba.png";
+      }
+    });
+  </script>
+  
+
+</body>
+</html>

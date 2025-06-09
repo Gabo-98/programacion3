@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DGEyC{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo DGEyC" height="40">
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <a href="{{ url_for('index') }}" class="nav-item">Inicio</a>
+                
+                <div class="nav-item dropdown">
+                    <button class="dropbtn">Institucional</button>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('institucional') }}">Reseña Histórica</a>
+                        <a href="{{ url_for('organigrama') }}">Organigrama</a>
+                        <a href="{{ url_for('autoridades') }}">Autoridades</a>
+                        <a href="{{ url_for('mision_vision') }}">Misión y Visión</a>
+                        <a href="{{ url_for('marco_legal') }}">Marco Legal</a>
+                    </div>
+                </div>
+
+                <a href="{{ url_for('territorio') }}" class="nav-item">Territorio</a>
+                <a href="{{ url_for('encuestadores') }}" class="nav-item">Encuestadores</a>
+                <a href="{{ url_for('noticias') }}" class="nav-item">Noticias</a>
+                <a href="{{ url_for('operativos') }}" class="nav-item">Operativos</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>Dirección: Av. Belgrano Sur 191, Santiago del Estero</p>
+                <p>Teléfono: (0385) 421-9003 / 421-3169</p>
+                <p>Email: direcciondeestadisticaysc@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <a href="{{ url_for('index') }}">Inicio</a>
+                <a href="{{ url_for('noticias') }}">Noticias</a>
+                <a href="{{ url_for('operativos') }}">Operativos</a>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; {% now 'Y' %} DGEyC - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Definiciones</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a href="/"><img src="../assets/logo/logo.png" alt="Logo Dirección General de Estadística y Censos"></a>
+        <div class="nav-links">
+          <button class="dropbtn" onclick="window.location.href='/'">Inicio</button>
+          <div class="dropdown">
+            <button class="dropbtn">Institucional</button>
+            <div class="dropdown-content">
+              <a href="/institucional">Reseña Histórica</a>
+              <a href="/organigrama">Organigrama</a>
+              <a href="/autoridades">Autoridades</a>
+              <a href="/mision-y-vision">Misión y Visión</a>
+              <a href="/leyes">Marco Legal</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Definiciones</button>
+            <div class="dropdown-content">
+              <a href="/biblioteca">Biblioteca</a>
+              <a href="/definicion-palabras">Definición de Palabras</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Estadísticas</button>
+            <div class="dropdown-content">
+              <a href="/anuarios">Anuarios Estadísticos</a>
+              <a href="/indicadores">Indicadores Clave</a>
+              <a href="/publicaciones">Publicaciones</a>
+              <a href="/ipc">IPC</a>
+              <a href="/EPH">EPH</a>
+              <a href="/producto-bruto-geografico">Producto Bruto</a>
+            </div>
+          </div>
+          
+          <div class="dropdown">
+            <button class="dropbtn">Encuestadores</button>
+            <div class="dropdown-content">
+              <a href="/encuestadores">Listado de Encuestadores</a>
+              <a href="/validacionEncuestador">Validar Encuestador</a>
+              <a href="/materiales">Materiales</a>
+              <a href="/calendario">Calendario</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Territorio</button>
+            <div class="dropdown-content">
+              <a href="/mapa-provincial">Mapa Provincial</a>
+              <a href="/departamentos">Departamentos</a>
+              <a href="/localidades">Localidades</a>
+              <a href="/censos">Datos Censales</a>
+              <a href="/cartografia">Recursos Cartograficos</a>
+            </div>
+          </div>
+          <button class="dropbtn" onclick="window.location.href='/noticias'">Noticias</button>
+          <button class="dropbtn" onclick="window.location.href='/ubicacion'">¿Donde estamos?</button>
+
+        </div>
+      <button id="toggleThemeBtn" title="Cambiar modo oscuro/claro">
+        <span class="dark-icon">☀️</span>
+        <span class="light-icon">🌙</span>
+        </button>
+      
+      <script>
+          const btn = document.getElementById('toggleThemeBtn');
+          btn.addEventListener('click', () => {
+              document.body.classList.toggle('dark-mode');
+              
+              // Cambiar iconos
+              const lightIcon = document.querySelector('.light-icon');
+              const darkIcon = document.querySelector('.dark-icon');
+              
+              if(document.body.classList.contains('dark-mode')) {
+                  lightIcon.style.display = 'none';
+                  darkIcon.style.display = 'inline';
+              } else {
+                  lightIcon.style.display = 'inline';
+                  darkIcon.style.display = 'none';
+              }
+          });
+      </script>
+      </header>
+
+  <main class="contenido">
+    <h1>Definiciones</h1>
+
+    <section>
+      <h2>Signos convencionales</h2>
+      <ul>
+        <li>- : Señala que la magnitud es cero.</li>
+        <li>* : Indica que el dato es provisorio.</li>
+        <li>: : Dato no disponible a la fecha de presentación de los resultados.</li>
+        <li>s : Dato confidencial por aplicación de las reglas del Secreto Estadístico.</li>
+        <li>0 : Dato igual a cero por redondeo de cifra positiva.</li>
+      </ul>
+      <p>Publicación de la Carta de Servicios de la Institución.</p>
+      <p>Recopilación permanente de información estadística y publicaciones provenientes de otros organismos o servicios.</p>
+      <p>Como orgullo de todo el personal, se logró una Mención Especial Premio a la Calidad en el Servicio al Ciudadano: "CREDIBILIDAD DE LA ORGANIZACIÓN - SEGUNDA EDICIÓN - AÑO 2001", otorgado por el Gobierno de la Provincia de Salta.</p>
+    </section>
+
+    <section>
+      <h2>Símbolos utilizados</h2>
+      <ul>
+        <li>ha : Hectárea</li>
+        <li>Hpa : Hectopascales</li>
+        <li>hm³ : Hectómetro cúbico</li>
+        <li>kg : Kilogramo</li>
+        <li>km : Kilómetro</li>
+        <li>km² : Kilómetro cuadrado</li>
+        <li>m : Metro</li>
+        <li>mm : Milímetro</li>
+        <li>m² : Metro cuadrado</li>
+        <li>Mwh : Megawatt/hora</li>
+        <li>Kwh : Kilowatt/hora</li>
+        <li>% : Por ciento</li>
+        <li>o/oo : Por mil</li>
+        <li>o/oooo : Por cien mil</li>
+      </ul>
+    </section>
+
+    <section>
+      <p></p>
+      <h2>Población</h2>
+      <p>Densidad de la población : Razón que se calcula entre la cantidad de población y la superficie territorial que la contiene de un rea geográfica determinada expresada en habitantes por kilómetro cuadrado</p>
+      <p>Indice de masculinidad : Número medio de hombres por mujer. Generalmente es multiplicado por 100</p>
+      <p>Esperanza de vida al nacer : Número medio de años vividos por una generación de nacidos bajo condiciones de mortalidad dadas.</p>
+      <p>Tasa media anual de crecimiento : Es un indicador que mide el crecimiento anual promedio de la población de un determinado lugar en el período considerado</p>
+      <p>Población urbana : Es la que vive en localidades de 2.000 y más habitantes
+      <p>Tasa bruta de natalidad : Es el cociente entre el número medio anual de nacidos vivos ocurridos durante un período determinado y la población media del período, generalmente un año. Esta tasa se multiplica por 1.000</p>
+      <p>Tasa bruta de mortalidad : Es el cociente entre las defunciones ocurridas en una población durante un período determinado generalmente un año y la población media del período. Esta tasa se multiplica por 1.000</p>
+      <p>Tasa bruta de nupcialidad : Es el cociente entre el número de matrimonios en un año y la población media correspondiente. Esta tasa se multiplica por 1.000</p>
+      <p>Indicadores de pobreza : Para la medición de la pobreza, se suelen adoptar dos enfoques metodológicos diferentes: Necesidades Básicas Insatisfechas y Línea de Pobreza</p>
+      <p>Necesidades básicas insatisfechas : Este conjunto se relaciona con la pobreza habitualmente llamada estructural e identifica a los hogares en situación de privación de ciertos recursos, tales como una adecuada condición sanitaria y de habitabilidad y acceso a la educación, y oportunidades que posibilitarían su subsistencia y desarrollo adecuados. Con los datos censales de 1980, el indicador de NBI que se diseño, contemplaba cinco indicadores simples incluyendo los hogares.</p>
+      <p>Hogares indigentes : Son los hogares que perciben un ingreso tan reducido que no les permite llegar a cubrir el costo de la canasta basica de alimentos</p>
+    </section>
+
+    <section>
+      <h2>Vivienda</h2>
+      <p>Vivienda Particular :vivienda destinada a alojar personas que viven bajo un régimen de tipo familiar</p>
+      <p>Constituyen tipos de viviendas particulares: casas, ranchos, casillas, departamentos, piezas en inquilinato, piezas en hotel familiar o pensión, viviendas móviles, y locales no construidos para habitación. Las piezas en inquilinato, en hotel familiar o pensión, las viviendas móviles y los locales no construidos para habitación se consideran viviendas particulares, sólo si hubo personas que pasaron la noche de referencia del Censo.</p>
+      <p>Vivienda Colectiva : vivienda destinada a alojar personas que viven bajo un régimen institucional (no familiar), regulada por normas de convivencia de carácter administrativo, militar, religioso, de salud, de reclusión, de trabajo, de educación, etc.</p>
+      <p>Constituyen tipos de viviendas colectivas: cuarteles, hogares de religiosos (incluye conventos y seminarios), hospitales, hogares de ancianos (incluye geriátrico), prisiones (incluye comisarías), campamentos/obradores, residencias de estudiantes, colegios o internados, hogares de menores, hoteles turísticos.</p>
+    </section>
+
+    <section>
+      <h2>Ocupación</h2>
+      <p>Población Económicamente Activa : Es el conjunto de personas que tiene, por lo menos, una ocupación o que , sin tenerla la busca activamente. Dentro de tal conjunto y de acuerdo siempre con las dimensiones mencionadas.</p>
+      <p>Ocupados : Es el conjunto de personas que tienen por lo menos una ocupación.</p>
+      <p>Desocupados : Es el conjunto de personas que no teniendo ocupación, la busca activamente</p>
+      <p>Subocupados Demandantes : Est compuesta por ocupados que trabajan menos de 35 horas semanales por causas involuntarias, desean trabajar más horas y están en la búsqueda de otra ocupación.</p>
+      <p>Subocupados No Demandantes : Son los ocupados que trabajan menos de 35 horas semanales por causas involuntarias, están dispuestos a trabajar más horas pero no buscan otra ocupación</p>
+      <p>Tasa bruta de actividad : Proporción entre la población económicamente activa (ocupados y desocupados) y el total de la población</p>
+      <p>Tasa de desocupación : Proporción entre el total de la población desocupada y el total de la población económicamente activa por 100</p>
+      <p>Tasa de subocupación : Proporción entre el total de ocupados que trabajan menos de 35 horas semanales y desean trabajar más horas y el total de la población económicamente activa, por 100</p>
+      <p>Tasa de subocupados demandantes : Calculada como porcentaje entre la población de subocupados demandantes y la población económicamente activa, por 100</p>
+      <p>Tasa de subocupados no demandantes : Proporción entre la población de subocupados no demandantes y la población económicamente activa, por 100</p>
+      <p>Tasa de empleo : Se calcula como porcentaje entre la población ocupada y la población total</p>
+      <p>Tasa de demandantes de empleo : Proporción entre la población que teniendo o no una ocupación la busca activamente y la población económicamente activa, por 100</p>
+    </section>
+
+    <section>
+      <h2>Precios</h2>
+      <p>Indice de precios al consumidor : El Índice de Precios al Consumidor es un número índice, que mide la evolución promedio de los precios de un conjunto de bienes y servicios representativos del gasto de consumo de los hogares residentes en un área determinada y en un determinado período</p>
+      <p>Indice de precios internos al por mayor : El Indice de Precios Internos al por Mayor (IPIM) mide la evolución de los precios de los productos de origen nacional e importado ofrecidos en el mercado interno. Los precios observados incluyen el IVA, los impuestos internos y otros gravámenes contenidos</p>
+      <p>Indice de precios internos básicos al por mayor : El Indice de Precios Internos Básicos al por Mayor (IPIB) tiene igual cobertura que el IPIM pero los precios se consideran sin impuestos. En este índice, como el IPIM, las ponderaciones se calcularon considerando los valores de producción netos de exportación</p>
+      <p>Indice de precios básicos del productor : El indice de Precios Básicos del Productor (IPP) mide la evolución de los precios de los productos exclusivamente de origen nacional, por lo tanto, no incluyen importaciones. Pero en las ponderaciones, a diferencia de lo que sucede en los dos indices anteriores</p>
+      <p>Indice del Costo de la Construcción en el Gran Buenos : El Indice del Costo de la Construcción en el Gran Buenos Aires (ICC) base 1993=100, mide las variaciones mensuales que experimenta el costo de la construcción privada de edificios destinados a vivienda, en la Ciudad de Buenos Aires y 24 partidos del conurbano</p>
+    </section>
+
+    <section>
+      <h2>Industria manufacturera</h2>
+      <p>Unidades Productivas :Locales que realizan actividades económicas. La acción o conjunto de acciones que se manifiesta externamente en la fabricación, comercialización de bienes, prestación de servicios, construcción o transporte, con o sin fines de lucro.</p>
+      <p>Unidades Auxiliares : Locales que realizan actividades de apoyo a las actividades productivas. Administración central, otras oficinas administrativas, depósitos o garajes, taller de mantenimiento y/o reparaciones, etc. Son tareas que las empresas suelen realizar para sí mismas con personal propio, cuyos costos se cubren con los ingresos de las actividades productivas que se llevan a cabo en otros locales de la empresa.</p>
+    </section>
+
+    <section>
+      <h2>Cuentas Nacionales</h2>
+      <p>Producto Bruto Geográfico: Es el valor a precios de mercado de todos los bienes y servicios finales que se produjeron en una provincia durante un período determinado, habitualmente un año.</p>
+    </section>
+  </main>
+
+  <div class="footer">
+    <div class="footer-section">
+      <img src="../assets/logo/logo.png" alt="Logo Dirección de Estadística y Censo" class="footer-logo">
+      <span class="footer-title">Dirección de Estadística y Censo</span>
+      <span>Provincia de Santiago del Estero</span>
+      <span>Av. Belgrano Sur 191 - (4200) Santiago del Estero</span>
+      <span>Tel: (0385) 421-9003 / 421-3169</span>
+      <span>Email: direcciondeestadisticaysc@gmail.com</span>
+      <br>
+    </div>
+   
+    <div class="footer-section">
+      
+      <br>
+      <span class="footer-title">ORGANISMOS PÚBLICOS PROVINCIALES</span>
+      <span>Gobernación</span>
+      <span>Ministerio de Gobierno</span>
+      <span>Ministerio de Educación</span>
+      <div>
+        
+        <span>Ministerio de Salud</span>
+        <span>Ministerio de Hacienda</span>
+        <span>Ministerio de Desarrollo Social</span>
+        <span>Ministerio de Producción</span>
+      </div>
+    </div>
+    <div class="footer-section indec-section">
+      <img src="../assets/logo/Indec_logo.png" alt="Logo INDEC" class="footer-logo-indec">
+
+      <span class="footer-title">Instituto Nacional de Estadística y Censos</span>
+      <span>República Argentina</span>
+    </div>
+
+  
+  </div>
+            
+  </div>
+
+  <div class="arrow" id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+    <img id="scrollArrow" src="../assets/interfase/flecha-arriba.png" alt="Subir" width="40">
+  </div>
+  <script>
+    const toggleBtn = document.getElementById('toggleThemeBtn');
+    const scrollArrow = document.getElementById('scrollArrow');
+    
+    toggleBtn.addEventListener('click', () => {
+      if(document.body.classList.contains('dark-mode')) {
+        scrollArrow.src = "../assets/interfase/flecha-arriba-blanco.png";
+      } else {
+        scrollArrow.src = "../assets/interfase/flecha-arriba.png";
+      }
+    });
+  </script>
+</body>
+</html>

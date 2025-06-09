@@ -1,0 +1,291 @@
+/* Estilos para mapas interactivos */
+
+/* Contenedor principal del mapa */
+#map {
+  height: 600px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* Panel de información */
+.info {
+  padding: 8px 10px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  max-width: 250px;
+}
+
+.info h4 {
+  margin: 0 0 5px;
+  color: #555;
+  font-weight: bold;
+}
+
+/* Leyenda del mapa */
+.legend {
+  line-height: 18px;
+  color: #555;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+.legend h4 {
+  margin: 0 0 5px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Estilos para popups */
+.leaflet-popup-content {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.leaflet-popup-content b {
+  color: #2c3e50;
+  display: block;
+  margin-bottom: 3px;
+  font-size: 14px;
+}
+
+/* Estilos para marcadores */
+.marker-cluster {
+  background-color: rgba(241, 128, 23, 0.6);
+}
+
+.marker-cluster div {
+  background-color: rgba(241, 128, 23, 0.8);
+  color: white;
+  font-weight: bold;
+}
+
+/* Estilos para polígonos */
+.departamento {
+  fill-opacity: 0.7;
+  stroke: white;
+  stroke-width: 1;
+  stroke-opacity: 0.5;
+  transition: fill-opacity 0.2s ease;
+}
+
+.departamento:hover {
+  fill-opacity: 0.9;
+  stroke-width: 2;
+  stroke-opacity: 1;
+}
+
+/* Adaptación para modo oscuro */
+.dark-mode #map {
+  filter: brightness(0.85) contrast(1.1);
+}
+
+.dark-mode .info {
+  background: #333;
+  background: rgba(51, 51, 51, 0.8);
+  color: #fff;
+}
+
+.dark-mode .info h4 {
+  color: #ccc;
+}
+
+.dark-mode .legend {
+  color: #ccc;
+}
+
+.dark-mode .leaflet-popup-content-wrapper {
+  background: #333;
+  color: #fff;
+}
+
+.dark-mode .leaflet-popup-tip {
+  background: #333;
+}
+
+.dark-mode .leaflet-popup-content b {
+  color: #f1f1f1;
+}
+
+/* Controles de zoom */
+.leaflet-control-zoom a {
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .leaflet-control-zoom a {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .leaflet-control-zoom a:hover {
+  background-color: #444;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  #map {
+    height: 450px;
+  }
+  
+  .info {
+    padding: 6px 8px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  
+  .legend {
+    line-height: 16px;
+  }
+  
+  .legend i {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #map {
+    height: 350px;
+  }
+  
+  .info, .legend {
+    max-width: 200px;
+  }
+}
+/* Contenedor principal del mapa en formato cuadrado */
+.mapa-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+#mapa-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.mapa-base {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.departamento-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.departamento-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.info-panel {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
+  z-index: 10;
+}
+
+.dark-mode .info-panel {
+  background-color: rgba(51, 51, 51, 0.8);
+  color: #fff;
+}
+
+/* Leyenda */
+.legend {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .legend {
+  background-color: rgba(51, 51, 51, 0.8);
+  color: #fff;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  #mapa-container {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  #mapa-container {
+    width: 320px;
+    height: 320px;
+  }
+  
+  .info-panel {
+    max-width: 200px;
+    font-size: 12px;
+  }
+}
+.departamento-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Permite que los eventos pasen a través */
+    z-index: 10;
+  }
+  
+  #mapa-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .info-panel {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .dark-mode .info-panel {
+    background-color: #333;
+    color: #fff;
+  }

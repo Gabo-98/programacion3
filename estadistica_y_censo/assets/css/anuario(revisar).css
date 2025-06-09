@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fdf6fc;
+}
+
+.navbar {
+  background-color: #003d8f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.anuarios h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.anuarios p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.box {
+  width: 150px;
+  height: 200px;
+  background-color: #ccc;
+}
+
+.footer {
+  background-color: #55c1f1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.arrow {
+  font-size: 3rem;
+  text-align: center;
+  grid-column: 1 / -1;
+  margin-top: 1rem;
+}

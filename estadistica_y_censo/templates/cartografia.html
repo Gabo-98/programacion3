@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartografia</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/calendario.css">
+</head>
+<body>
+<header>
+    <div class="navbar">
+      <a href="/"><img src="../assets/logo/logo.png" alt="Logo Dirección General de Estadística y Censos"></a>
+        <div class="nav-links">
+          <button class="dropbtn" onclick="window.location.href='/'">Inicio</button>
+          <div class="dropdown">
+            <button class="dropbtn">Institucional</button>
+            <div class="dropdown-content">
+              <a href="/institucional">Reseña Histórica</a>
+              <a href="/organigrama">Organigrama</a>
+              <a href="/autoridades">Autoridades</a>
+              <a href="/mision-y-vision">Misión y Visión</a>
+              <a href="/leyes">Marco Legal</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Definiciones</button>
+            <div class="dropdown-content">
+              <a href="/biblioteca">Biblioteca</a>
+              <a href="/definicion-palabras">Definición de Palabras</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Estadísticas</button>
+            <div class="dropdown-content">
+              <a href="/anuarios">Anuarios Estadísticos</a>
+              <a href="/indicadores">Indicadores Clave</a>
+              <a href="/publicaciones">Publicaciones</a>
+              <a href="/ipc">IPC</a>
+              <a href="/EPH">EPH</a>
+              <a href="/producto-bruto-geografico">Producto Bruto</a>
+            </div>
+          </div>
+          
+          <div class="dropdown">
+            <button class="dropbtn">Encuestadores</button>
+            <div class="dropdown-content">
+              <a href="/encuestadores">Listado de Encuestadores</a>
+              <a href="/validacionEncuestador">Validar Encuestador</a>
+              <a href="/materiales">Materiales</a>
+              <a href="/calendario">Calendario</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Territorio</button>
+            <div class="dropdown-content">
+              <a href="/mapa-provincial">Mapa Provincial</a>
+              <a href="/departamentos">Departamentos</a>
+              <a href="/localidades">Localidades</a>
+              <a href="/censos">Datos Censales</a>
+              <a href="/cartografia">Recursos Cartograficos</a>
+            </div>
+          </div>
+          <button class="dropbtn" onclick="window.location.href='/noticias'">Noticias</button>
+          <button class="dropbtn" onclick="window.location.href='/ubicacion'">¿Donde estamos?</button>
+
+        </div>
+      <button id="toggleThemeBtn" title="Cambiar modo oscuro/claro">
+        <span class="dark-icon">☀️</span>
+        <span class="light-icon">🌙</span>
+        </button>
+      
+      <script>
+          const btn = document.getElementById('toggleThemeBtn');
+          btn.addEventListener('click', () => {
+              document.body.classList.toggle('dark-mode');
+              
+              // Cambiar iconos
+              const lightIcon = document.querySelector('.light-icon');
+              const darkIcon = document.querySelector('.dark-icon');
+              
+              if(document.body.classList.contains('dark-mode')) {
+                  lightIcon.style.display = 'none';
+                  darkIcon.style.display = 'inline';
+              } else {
+                  lightIcon.style.display = 'inline';
+                  darkIcon.style.display = 'none';
+              }
+          });
+      </script>
+      </header>
+<section>
+    <h2>Cartografía</h2>
+    <form method="POST" action="/cartografia">
+        <label for="dni">DNI:</label><input type="text" id="dni" name="dni" placeholder="Enter DNI" title="Enter your DNI number" required><br>
+        <label for="nombre">Nombre:</label><input type="text" id="nombre" name="nombre" placeholder="Enter name" title="Enter your full name" required><br>
+        <label for="apellido">Apellido:</label><input type="text" id="apellido" name="apellido" placeholder="Enter surname" title="Enter your surname" required><br>
+        <label for="correo">Correo:</label><input type="email" id="correo" name="correo" placeholder="Enter email" title="Enter your email address" required><br>
+        <label for="uso">Uso:</label><textarea id="uso" name="uso" placeholder="Enter usage details" title="Enter how you will use this information" required></textarea><br>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+<div class="footer">
+    <div class="footer-section">
+      <img src="../assets/logo/logo.png" alt="Logo Dirección de Estadística y Censo" class="footer-logo">
+      <span class="footer-title">Dirección de Estadística y Censo</span>
+      <span>Provincia de Santiago del Estero</span>
+      <span>Av. Belgrano Sur 191 - (4200) Santiago del Estero</span>
+      <span>Tel: (0385) 421-9003 / 421-3169</span>
+      <span>Email: direcciondeestadisticaysc@gmail.com</span>
+      <br>
+    </div>
+   
+    <div class="footer-section">
+      
+      <br>
+      <span class="footer-title">ORGANISMOS PÚBLICOS PROVINCIALES</span>
+      <span>Gobernación</span>
+      <span>Ministerio de Gobierno</span>
+      <span>Ministerio de Educación</span>
+      <div>
+        
+        <span>Ministerio de Salud</span>
+        <span>Ministerio de Hacienda</span>
+        <span>Ministerio de Desarrollo Social</span>
+        <span>Ministerio de Producción</span>
+      </div>
+    </div>
+    <div class="footer-section indec-section">
+      <img src="../assets/logo/Indec_logo.png" alt="Logo INDEC" class="footer-logo-indec">
+
+      <span class="footer-title">Instituto Nacional de Estadística y Censos</span>
+      <span>República Argentina</span>
+    </div>
+
+  
+  </div>
+            
+  </div>
+
+  <div class="arrow" id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+    <img id="scrollArrow" src="../assets/interfase/flecha-arriba.png" alt="Subir" width="40">
+  </div>
+  <script>
+    const toggleBtn = document.getElementById('toggleThemeBtn');
+    const scrollArrow = document.getElementById('scrollArrow');
+    
+    toggleBtn.addEventListener('click', () => {
+      if(document.body.classList.contains('dark-mode')) {
+        scrollArrow.src = "../assets/interfase/flecha-arriba-blanco.png";
+      } else {
+        scrollArrow.src = "../assets/interfase/flecha-arriba.png";
+      }
+    });
+  </script>
+
+</body>
+</html>
+

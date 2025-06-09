@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Visión y Misión</title>
+  <link rel="stylesheet" href="../assets/css/Styles.css">
+</head>
+<body>
+  
+<header>
+  <div class="navbar">
+    <a href="/"><img src="../assets/logo/logo.png" alt="Logo Dirección General de Estadística y Censos"></a>
+      <div class="nav-links">
+        <button class="dropbtn" onclick="window.location.href='/'">Inicio</button>
+        <div class="dropdown">
+          <button class="dropbtn">Institucional</button>
+          <div class="dropdown-content">
+            <a href="/institucional">Reseña Histórica</a>
+            <a href="/organigrama">Organigrama</a>
+            <a href="/autoridades">Autoridades</a>
+            <a href="/mision-y-vision">Misión y Visión</a>
+            <a href="/leyes">Marco Legal</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Definiciones</button>
+          <div class="dropdown-content">
+            <a href="/biblioteca">Biblioteca</a>
+            <a href="/definicion-palabras">Definición de Palabras</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Estadísticas</button>
+          <div class="dropdown-content">
+            <a href="/anuarios">Anuarios Estadísticos</a>
+            <a href="/indicadores">Indicadores Clave</a>
+            <a href="/publicaciones">Publicaciones</a>
+            <a href="/ipc">IPC</a>
+            <a href="/EPH">EPH</a>
+            <a href="/producto-bruto-geografico">Producto Bruto</a>
+          </div>
+        </div>
+        
+        <div class="dropdown">
+          <button class="dropbtn">Encuestadores</button>
+          <div class="dropdown-content">
+            <a href="/encuestadores">Listado de Encuestadores</a>
+            <a href="/validacionEncuestador">Validar Encuestador</a>
+            <a href="/materiales">Materiales</a>
+            <a href="/calendario">Calendario</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Territorio</button>
+          <div class="dropdown-content">
+            <a href="/mapa-provincial">Mapa Provincial</a>
+            <a href="/departamentos">Departamentos</a>
+            <a href="/localidades">Localidades</a>
+            <a href="/censos">Datos Censales</a>
+            <a href="/cartografia">Recursos Cartograficos</a>
+          </div>
+        </div>
+        <button class="dropbtn" onclick="window.location.href='/noticias'">Noticias</button>
+        <button class="dropbtn" onclick="window.location.href='/ubicacion'">¿Donde estamos?</button>
+
+      </div>
+    <button id="toggleThemeBtn" title="Cambiar modo oscuro/claro">
+      <span class="dark-icon">☀️</span>
+      <span class="light-icon">🌙</span>
+      </button>
+    
+    <script>
+        const btn = document.getElementById('toggleThemeBtn');
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            // Cambiar iconos
+            const lightIcon = document.querySelector('.light-icon');
+            const darkIcon = document.querySelector('.dark-icon');
+            
+            if(document.body.classList.contains('dark-mode')) {
+                lightIcon.style.display = 'none';
+                darkIcon.style.display = 'inline';
+            } else {
+                lightIcon.style.display = 'inline';
+                darkIcon.style.display = 'none';
+            }
+        });
+    </script>
+    </header>
+  </div>
+
+  <div class="main-section">
+    <div class="vision-mision">
+      <div class="vision-box">
+        <div class="section-title">NUESTRA<br>VISIÓN</div>
+        <p>Regir, Coordinar y Dirigir todas las actividades estadísticas oficiales que se desarrollan en la Provincia de Santiago del Estero, como así también participar de las que en forma conjunta se realizan con el INDEC, a fin de conocer adecuadamente las particularidades económicas, demográficas, sociales y culturales de la Provincia, y proveer de información estadística veraz y oportuna para la toma de decisiones del Gobierno y los Ciudadanos.</p>
+      </div>
+      <div class="mision-box">
+        <div class="section-title">NUESTRA<br>MISIÓN</div>
+        <p>Somos el organismo rector y coordinador de todas las actividades estadísticas oficiales que se desarrollan en la Provincia de Santiago del Estero según lo establecido en la Ley Nº 2.273 y el Decreto Provincial Serie “B” Nº 846/68. Asimismo, integramos el SISTEMA ESTADISTICO NACIONAL – SEN, como organismo periférico de conformidad a las disposiciones de la Ley nº 17.622..</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-section">
+    <h3>Política de Calidad</h3>
+    <p>
+      La DGE se encarga de investigar, recopilar, procesar y brindar a la sociedad las estadísticas básicas de la Provincia, para lo cual se compromete a:
+    </p>
+    <p>
+      Gestionar indicadores eficaces, comparables y de calidad, procurando la satisfacción de los usuarios internos y externos, conforme los requisitos legales aplicables. Asimismo, mejorar continuamente nuestra gestión de calidad mediante la revisión de los procesos de la organización, el desarrollo de los recursos humanos y la actualización tecnológica.
+    </p>
+
+    <h3>Objetivos</h3>
+    <p>
+      Unificar la orientación y ejercer la dirección superior, controlar y supervisar todas las actividades estadísticas oficiales que se realicen en la jurisdicción provincial.
+    </p>
+    <p>
+      Planificar, promover y coordinar las tareas estadísticas de los organismos del Estado Provincial y Municipal.
+    </p>
+
+    <h3>Funciones</h3>
+    <p>
+      Elaborar en forma sistemática y permanente, por sí sola o en coordinación con otros organismos nacionales, provinciales o municipales, estadísticas referentes a demografía, actividades agropecuarias, comercio, industria, finanzas y economía general, temas sociales u otra información estadística de interés público general.
+    </p>
+    <p>
+      Llevar a cabo la coordinación estadística integral en la provincia, con el objetivo de obtener una mayor unidad, claridad y exactitud en la captación y elaboración de series estadísticas. Coordinar su labor con los organismos nacionales que conducen y ejecuten tareas estadísticas a efectos de lograr su uniformidad y evitar superposiciones, para cuyos fines podrá suscribir, los convenios que estime necesarios.
+    </p>
+    <p>
+      Actuar como delegada nata del organismo nacional en la coordinación de las tareas estadísticas y censales, en cuanto respecta a su realización en el territorio de la provincia.
+    </p>
+    <p>
+      Supervisar, en lo que hace al aspecto estadístico de los informes, los testigos e investigaciones que efectúen otros organismos provinciales o municipales, como asimismo la publicación de informaciones estadísticas, de parte de los mismos, a fin de asegurar la exactitud y uniformidad. Publicar periódicamente un boletín estadístico en el que se reseñarán a través de series fundamentales, los principales índices que reflejen la situación demográfica, económica, financiera y social de la provincia. Además cuando lo considere necesario, publicará series estadísticas especiales y los estudios que realice.
+    </p>
+    <p>
+      Centralizar en un archivo estadístico todas las informaciones que se elaboren bien en forma directa o en coordinación con otros organismos o reparticiones, o por aquéllas que deban surtir tal carácter. Supervisar su personal especializado y sus antecedentes, para lo cual solicitará la colaboración de organismos nacionales y provinciales.
+    </p>
+    <p>
+      Supervisar y coordinar el acceso a la red nacional del conocimiento estadístico (SEN), y mantener comunicación permanente a través del correo electrónico con la Dirección Nacional de Estadística y Censos. (INTRANET).
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="footer-section">
+      <img src="../assets/logo/logo.png" alt="Logo Dirección de Estadística y Censo" class="footer-logo">
+      <span class="footer-title">Dirección de Estadística y Censo</span>
+      <span>Provincia de Santiago del Estero</span>
+      <span>Av. Belgrano Sur 191 - (4200) Santiago del Estero</span>
+      <span>Tel: (0385) 421-9003 / 421-3169</span>
+      <span>Email: direcciondeestadisticaysc@gmail.com</span>
+      <br>
+    </div>
+   
+    <div class="footer-section">
+      
+      <br>
+      <span class="footer-title">ORGANISMOS PÚBLICOS PROVINCIALES</span>
+      <span>Gobernación</span>
+      <span>Ministerio de Gobierno</span>
+      <span>Ministerio de Educación</span>
+      <div>
+        
+        <span>Ministerio de Salud</span>
+        <span>Ministerio de Hacienda</span>
+        <span>Ministerio de Desarrollo Social</span>
+        <span>Ministerio de Producción</span>
+      </div>
+    </div>
+    <div class="footer-section indec-section">
+      <img src="../assets/logo/Indec_logo.png" alt="Logo INDEC" class="footer-logo-indec">
+
+      <span class="footer-title">Instituto Nacional de Estadística y Censos</span>
+      <span>República Argentina</span>
+    </div>
+
+  
+  </div>
+            
+  </div>
+
+  <div class="arrow" id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+    <img id="scrollArrow" src="../assets/interfase/flecha-arriba.png" alt="Subir" width="40">
+  </div>
+  <script>
+    const toggleBtn = document.getElementById('toggleThemeBtn');
+    const scrollArrow = document.getElementById('scrollArrow');
+    
+    toggleBtn.addEventListener('click', () => {
+      if(document.body.classList.contains('dark-mode')) {
+        scrollArrow.src = "../assets/interfase/flecha-arriba-blanco.png";
+      } else {
+        scrollArrow.src = "../assets/interfase/flecha-arriba.png";
+      }
+    });
+  </script>
+</body>
+</html>

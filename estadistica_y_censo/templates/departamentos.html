@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Departamentos - Santiago del Estero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/mapas.css">
+  
+  <!-- Incluir Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+  
+  <!-- Incluir Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+  
+  <style>
+    .map-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+    
+    #map {
+      height: 600px;
+      width: 600px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .info {
+      padding: 6px 8px;
+      font: 14px/16px Arial, Helvetica, sans-serif;
+      background: white;
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 5px;
+    }
+    
+    .info h4 {
+      margin: 0 0 5px;
+      color: #777;
+    }
+    
+    .legend {
+      line-height: 18px;
+      color: #555;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .legend i {
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin-right: 8px;
+      opacity: 0.7;
+    }
+    
+    .dark-mode .info {
+      background: #333;
+      background: rgba(51,51,51,0.8);
+      color: #fff;
+    }
+    
+    .dark-mode .info h4 {
+      color: #ccc;
+    }
+    
+    .dark-mode .legend {
+      color: #ccc;
+      background-color: rgba(51, 51, 51, 0.8);
+    }
+    
+    /* Estilos responsivos */
+    @media (max-width: 768px) {
+      #map {
+        width: 450px;
+        height: 450px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      #map {
+        width: 320px;
+        height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <a href="/"><img src="../assets/logo/logo.png" alt="Logo Dirección General de Estadística y Censos"></a>
+        <div class="nav-links">
+          <button class="dropbtn" onclick="window.location.href='/'">Inicio</button>
+          <div class="dropdown">
+            <button class="dropbtn">Institucional</button>
+            <div class="dropdown-content">
+              <a href="/institucional">Reseña Histórica</a>
+              <a href="/organigrama">Organigrama</a>
+              <a href="/autoridades">Autoridades</a>
+              <a href="/mision-y-vision">Misión y Visión</a>
+              <a href="/leyes">Marco Legal</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Definiciones</button>
+            <div class="dropdown-content">
+              <a href="/biblioteca">Biblioteca</a>
+              <a href="/definicion-palabras">Definición de Palabras</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Estadísticas</button>
+            <div class="dropdown-content">
+              <a href="/anuarios">Anuarios Estadísticos</a>
+              <a href="/indicadores">Indicadores Clave</a>
+              <a href="/publicaciones">Publicaciones</a>
+              <a href="/ipc">IPC</a>
+              <a href="/EPH">EPH</a>
+              <a href="/producto-bruto-geografico">Producto Bruto</a>
+            </div>
+          </div>
+          
+          <div class="dropdown">
+            <button class="dropbtn">Encuestadores</button>
+            <div class="dropdown-content">
+              <a href="/encuestadores">Listado de Encuestadores</a>
+              <a href="/validacionEncuestador">Validar Encuestador</a>
+              <a href="/materiales">Materiales</a>
+              <a href="/calendario">Calendario</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Territorio</button>
+            <div class="dropdown-content">
+              <a href="/mapa-provincial">Mapa Provincial</a>
+              <a href="/departamentos">Departamentos</a>
+              <a href="/localidades">Localidades</a>
+              <a href="/censos">Datos Censales</a>
+              <a href="/cartografia">Recursos Cartograficos</a>
+            </div>
+          </div>
+          <button class="dropbtn" onclick="window.location.href='/noticias'">Noticias</button>
+          <button class="dropbtn" onclick="window.location.href='/ubicacion'">¿Donde estamos?</button>
+    
+        </div>
+      <button id="toggleThemeBtn" title="Cambiar modo oscuro/claro">
+        <span class="dark-icon">☀️</span>
+        <span class="light-icon">🌙</span>
+        </button>
+      
+      <script>
+          const btn = document.getElementById('toggleThemeBtn');
+          btn.addEventListener('click', () => {
+              document.body.classList.toggle('dark-mode');
+              
+              // Cambiar iconos
+              const lightIcon = document.querySelector('.light-icon');
+              const darkIcon = document.querySelector('.dark-icon');
+              
+              if(document.body.classList.contains('dark-mode')) {
+                  lightIcon.style.display = 'none';
+                  darkIcon.style.display = 'inline';
+              } else {
+                  lightIcon.style.display = 'inline';
+                  darkIcon.style.display = 'none';
+              }
+          });
+      </script>
+      </header>
+
+
+        <div class="mapa-info">
+          <h2>Departamentos de Santiago del Estero</h2>
+          <main class="contenido">
+            <h1>DEPARTAMENTOS DE SANTIAGO DEL ESTERO</h1>
+            <p>Visualización interactiva de los departamentos de la provincia con datos estadísticos.</p>
+            
+            <div class="map-container">
+              <div id="map"></div>
+              
+              <div class="legend">
+                <h4>Población</h4>
+                <div><i style="background: #800026"></i> Más de 200,000</div>
+                <div><i style="background: #BD0026"></i> 100,000 - 200,000</div>
+                <div><i style="background: #E31A1C"></i> 50,000 - 100,000</div>
+                <div><i style="background: #FC4E2A"></i> 20,000 - 50,000</div>
+                <div><i style="background: #FD8D3C"></i> 10,000 - 20,000</div>
+                <div><i style="background: #FEB24C"></i> 5,000 - 10,000</div>
+                <div><i style="background: #FED976"></i> 2,000 - 5,000</div>
+                <div><i style="background: #FFEDA0"></i> Menos de 2,000</div>
+              </div>
+            </div>
+            
+            <script>
+              // Inicializar el mapa centrado en Santiago del Estero
+              var map = L.map('map').setView([-27.7833, -64.2667], 7);
+              
+              // Añadir capa base de OpenStreetMap
+              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 12,
+                minZoom: 7,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              }).addTo(map);
+              
+              // Datos de ejemplo para los departamentos (reemplazar con datos reales)
+              var departamentos = [
+                { nombre: "Capital", poblacion: 269678, coordenadas: [-27.7833, -64.2667] },
+                // ... agregar más departamentos aquí ...
+              ];
+              
+              // Añadir marcadores para cada departamento
+              departamentos.forEach(function(depto) {
+                var color = getColor(depto.poblacion / 1000);
+                var radio = Math.sqrt(depto.poblacion) / 30;
+                
+                L.circleMarker(depto.coordenadas, {
+                  radius: radio,
+                  fillColor: color,
+                  color: '#000',
+                  weight: 1,
+                  opacity: 1,
+                  fillOpacity: 0.8
+                }).addTo(map)
+                  .bindPopup("<b>" + depto.nombre + "</b><br>Población: " + depto.poblacion.toLocaleString() + " habitantes");
+              });
+              
+              // Función para obtener color según población
+              function getColor(d) {
+                return d > 200 ? '#800026' :
+                       d > 100 ? '#BD0026' :
+                       d > 50  ? '#E31A1C' :
+                       d > 20  ? '#FC4E2A' :
+                       d > 10  ? '#FD8D3C' :
+                       d > 5   ? '#FEB24C' :
+                       d > 2   ? '#FED976' :
+                                 '#FFEDA0';
+              }
+            </script>
+          </main>
+    
+
+
+
+
+       
+      <div class="footer">
+        <div class="footer-section">
+          <img src="../assets/logo/logo.png" alt="Logo Dirección de Estadística y Censo" class="footer-logo">
+          <span class="footer-title">Dirección de Estadística y Censo</span>
+          <span>Provincia de Santiago del Estero</span>
+          <span>Av. Belgrano Sur 191 - (4200) Santiago del Estero</span>
+          <span>Tel: (0385) 421-9003 / 421-3169</span>
+          <span>Email: direcciondeestadisticaysc@gmail.com</span>
+          <br>
+        </div>
+       
+        <div class="footer-section">
+          
+          <br>
+          <span class="footer-title">ORGANISMOS PÚBLICOS PROVINCIALES</span>
+          <span>Gobernación</span>
+          <span>Ministerio de Gobierno</span>
+          <span>Ministerio de Educación</span>
+          <div>
+            
+            <span>Ministerio de Salud</span>
+            <span>Ministerio de Hacienda</span>
+            <span>Ministerio de Desarrollo Social</span>
+            <span>Ministerio de Producción</span>
+          </div>
+        </div>
+        <div class="footer-section indec-section">
+          <img src="../assets/logo/Indec_logo.png" alt="Logo INDEC" class="footer-logo-indec">
+    
+          <span class="footer-title">Instituto Nacional de Estadística y Censos</span>
+          <span>República Argentina</span>
+        </div>
+    
+      
+      </div>
+                
+      </div>
+    
+      <div class="arrow" id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+        <img id="scrollArrow" src="../assets/interfase/flecha-arriba.png" alt="Subir" width="40">
+      </div>
+      <script>
+        const toggleBtn = document.getElementById('toggleThemeBtn');
+        const scrollArrow = document.getElementById('scrollArrow');
+        
+        toggleBtn.addEventListener('click', () => {
+          if(document.body.classList.contains('dark-mode')) {
+            scrollArrow.src = "../assets/interfase/flecha-arriba-blanco.png";
+          } else {
+            scrollArrow.src = "../assets/interfase/flecha-arriba.png";
+          }
+        });
+      </script>
+
+
+</body>
+</html>
+
+  

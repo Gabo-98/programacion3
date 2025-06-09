@@ -1,0 +1,44 @@
+.footer {
+    background-color: #003d8f;
+    color: white;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.footer-logo {
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.footer-title {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.footer div {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer span {
+    margin-bottom: 0.5rem;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.arrow {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Estilos para modo oscuro */
+body.dark-mode .footer {
+    background-color: #1a237e;
+}

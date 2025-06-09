@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Publicaciones - Dirección de Estadísticas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  
+<header>
+    <div class="navbar">
+      <a href="/"><img src="../assets/logo/logo.png" alt="Logo Dirección General de Estadística y Censos"></a>
+        <div class="nav-links">
+          <button class="dropbtn" onclick="window.location.href='/'">Inicio</button>
+          <div class="dropdown">
+            <button class="dropbtn">Institucional</button>
+            <div class="dropdown-content">
+              <a href="/institucional">Reseña Histórica</a>
+              <a href="/organigrama">Organigrama</a>
+              <a href="/autoridades">Autoridades</a>
+              <a href="/mision-y-vision">Misión y Visión</a>
+              <a href="/leyes">Marco Legal</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Definiciones</button>
+            <div class="dropdown-content">
+              <a href="/biblioteca">Biblioteca</a>
+              <a href="/definicion-palabras">Definición de Palabras</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Estadísticas</button>
+            <div class="dropdown-content">
+              <a href="/anuarios">Anuarios Estadísticos</a>
+              <a href="/indicadores">Indicadores Clave</a>
+              <a href="/publicaciones">Publicaciones</a>
+              <a href="/ipc">IPC</a>
+              <a href="/EPH">EPH</a>
+              <a href="/producto-bruto-geografico">Producto Bruto</a>
+            </div>
+          </div>
+          
+          <div class="dropdown">
+            <button class="dropbtn">Encuestadores</button>
+            <div class="dropdown-content">
+              <a href="/encuestadores">Listado de Encuestadores</a>
+              <a href="/validacionEncuestador">Validar Encuestador</a>
+              <a href="/materiales">Materiales</a>
+              <a href="/calendario">Calendario</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Territorio</button>
+            <div class="dropdown-content">
+              <a href="/mapa-provincial">Mapa Provincial</a>
+              <a href="/departamentos">Departamentos</a>
+              <a href="/localidades">Localidades</a>
+              <a href="/censos">Datos Censales</a>
+              <a href="/cartografia">Recursos Cartograficos</a>
+            </div>
+          </div>
+          <button class="dropbtn" onclick="window.location.href='/noticias'">Noticias</button>
+          <button class="dropbtn" onclick="window.location.href='/ubicacion'">¿Donde estamos?</button>
+
+        </div>
+      <button id="toggleThemeBtn" title="Cambiar modo oscuro/claro">
+        <span class="dark-icon">☀️</span>
+        <span class="light-icon">🌙</span>
+        </button>
+      
+      <script>
+          const btn = document.getElementById('toggleThemeBtn');
+          btn.addEventListener('click', () => {
+              document.body.classList.toggle('dark-mode');
+              
+              // Cambiar iconos
+              const lightIcon = document.querySelector('.light-icon');
+              const darkIcon = document.querySelector('.dark-icon');
+              
+              if(document.body.classList.contains('dark-mode')) {
+                  lightIcon.style.display = 'none';
+                  darkIcon.style.display = 'inline';
+              } else {
+                  lightIcon.style.display = 'inline';
+                  darkIcon.style.display = 'none';
+              }
+          });
+      </script>
+      </header>
+  </header>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="text-center mb-5">
+                <h2 class="text-primary">Publicaciones</h2>
+                <p class="lead">Accede a nuestra biblioteca de documentos y reportes oficiales.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Filtrar Publicaciones</h2>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="search" class="form-label">Buscar</label>
+                                    <input type="text" class="form-control" id="search" placeholder="Título, palabra clave...">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="category" class="form-label">Categoría</label>
+                                    <select class="form-select" id="category">
+                                        <option value="">Todas las categorías</option>
+                                        <option value="reportes">Reportes Estadísticos</option>
+                                        <option value="censos">Censos</option>
+                                        <option value="boletines">Boletines</option>
+                                        <option value="investigaciones">Investigaciones</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="year" class="form-label">Año</label>
+                                    <select class="form-select" id="year">
+                                        <option value="">Todos los años</option>
+                                        <option>2024</option>
+                                        <option>2023</option>
+                                        <option>2022</option>
+                                        <option>2021</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Aplicar Filtros</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="publication-list">
+                        <div class="publication-card">
+                            <div class="publication-header">
+                                <h3>Informe Anual de Estadísticas 2023</h3>
+                                <div class="publication-meta">
+                                    <span class="badge reportes">Reporte Estadístico</span>
+                                    <span class="badge year">2023</span>
+                                </div>
+                            </div>
+                            <div class="publication-body">
+                                <p>Resumen estadístico completo del año 2023 con datos económicos, demográficos y sociales.</p>
+                                <div class="publication-footer">
+                                    <small>Publicado: 15/01/2024</small>
+                                    <a href="#" class="download-btn">Descargar PDF</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <div class="publication-header">
+                                <h3>Resultados Preliminares Censo 2022</h3>
+                                <div class="publication-meta">
+                                    <span class="badge censos">Censo</span>
+                                    <span class="badge year">2022</span>
+                                </div>
+                            </div>
+                            <div class="publication-body">
+                                <p>Datos preliminares del Censo Nacional de Población realizado en 2022.</p>
+                                <div class="publication-footer">
+                                    <small>Publicado: 30/05/2023</small>
+                                    <a href="#" class="download-btn">Descargar PDF</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav class="pagination-container">
+                        <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Siguiente</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer-section">
+        <br>
+        <span class="footer-title">ORGANISMOS PÚBLICOS PROVINCIALES</span>
+        <span>Gobernación</span>
+        <span>Ministerio de Gobierno</span>
+        <span>Ministerio de Educación</span>
+        <div>
+          
+          <span>Ministerio de Salud</span>
+          <span>Ministerio de Hacienda</span>
+          <span>Ministerio de Desarrollo Social</span>
+          <span>Ministerio de Producción</span>
+        </div>
+      </div>
+      <div class="footer-section indec-section">
+        <img src="../assets/logo/Indec_logo.png" alt="Logo INDEC" class="footer-logo-indec">
+  
+        <span class="footer-title">Instituto Nacional de Estadística y Censos</span>
+        <span>República Argentina</span>
+      </div>
+  
+    
+    </div>
+              
+    </div>
+  
+    <div class="arrow" id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+      <img id="scrollArrow" src="../assets/interfase/flecha-arriba.png" alt="Subir" width="40">
+    </div>
+    <script>
+      const toggleBtn = document.getElementById('toggleThemeBtn');
+      const scrollArrow = document.getElementById('scrollArrow');
+      
+      toggleBtn.addEventListener('click', () => {
+        if(document.body.classList.contains('dark-mode')) {
+          scrollArrow.src = "../assets/interfase/flecha-arriba-blanco.png";
+        } else {
+          scrollArrow.src = "../assets/interfase/flecha-arriba.png";
+        }
+      });
+    </script>
+</footer>
+</body>
+</html>

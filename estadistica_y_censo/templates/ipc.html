@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>IPC - Dirección de Estadísticas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    
+<header>
+  <div class="navbar">
+    <a href="/"><img src="../assets/logo/logo.png" alt="Logo Dirección General de Estadística y Censos"></a>
+      <div class="nav-links">
+        <button class="dropbtn" onclick="window.location.href='/'">Inicio</button>
+        <div class="dropdown">
+          <button class="dropbtn">Institucional</button>
+          <div class="dropdown-content">
+            <a href="/institucional">Reseña Histórica</a>
+            <a href="/organigrama">Organigrama</a>
+            <a href="/autoridades">Autoridades</a>
+            <a href="/mision-y-vision">Misión y Visión</a>
+            <a href="/leyes">Marco Legal</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Definiciones</button>
+          <div class="dropdown-content">
+            <a href="/biblioteca">Biblioteca</a>
+            <a href="/definicion-palabras">Definición de Palabras</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Estadísticas</button>
+          <div class="dropdown-content">
+            <a href="/anuarios">Anuarios Estadísticos</a>
+            <a href="/indicadores">Indicadores Clave</a>
+            <a href="/publicaciones">Publicaciones</a>
+            <a href="/ipc">IPC</a>
+            <a href="/EPH">EPH</a>
+            <a href="/producto-bruto-geografico">Producto Bruto</a>
+          </div>
+        </div>
+        
+        <div class="dropdown">
+          <button class="dropbtn">Encuestadores</button>
+          <div class="dropdown-content">
+            <a href="/encuestadores">Listado de Encuestadores</a>
+            <a href="/validacionEncuestador">Validar Encuestador</a>
+            <a href="/materiales">Materiales</a>
+            <a href="/calendario">Calendario</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Territorio</button>
+          <div class="dropdown-content">
+            <a href="/mapa-provincial">Mapa Provincial</a>
+            <a href="/departamentos">Departamentos</a>
+            <a href="/localidades">Localidades</a>
+            <a href="/censos">Datos Censales</a>
+            <a href="/cartografia">Recursos Cartograficos</a>
+          </div>
+        </div>
+        <button class="dropbtn" onclick="window.location.href='/noticias'">Noticias</button>
+        <button class="dropbtn" onclick="window.location.href='/ubicacion'">¿Donde estamos?</button>
+
+      </div>
+    <button id="toggleThemeBtn" title="Cambiar modo oscuro/claro">
+      <span class="dark-icon">☀️</span>
+      <span class="light-icon">🌙</span>
+      </button>
+    
+    <script>
+        const btn = document.getElementById('toggleThemeBtn');
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            // Cambiar iconos
+            const lightIcon = document.querySelector('.light-icon');
+            const darkIcon = document.querySelector('.dark-icon');
+            
+            if(document.body.classList.contains('dark-mode')) {
+                lightIcon.style.display = 'none';
+                darkIcon.style.display = 'inline';
+            } else {
+                lightIcon.style.display = 'inline';
+                darkIcon.style.display = 'none';
+            }
+        });
+    </script>
+    </header>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <h1 class="text-center mb-4">Índice de Precios al Consumidor</h1>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Última medición</h2>
+                        <div class="ipc-value">4.2%</div>
+                        <p class="card-text">Variación mensual del IPC - Julio 2023</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h3 class="card-title">Gráfico Mensual</h3>
+                                <div class="chart-placeholder">
+                                    <img src="../assets/images/ipc-chart.png" alt="Gráfico IPC últimos 12 meses" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h3 class="card-title">Datos Históricos</h3>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Mes/Año</th>
+                                                <th>Variación %</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Julio 2023</td>
+                                                <td>4.2%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Junio 2023</td>
+                                                <td>5.1%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mayo 2023</td>
+                                                <td>6.3%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Metodología</h2>
+                        <p>El IPC mide la variación de precios de una canasta de bienes y servicios representativa del consumo de los hogares.</p>
+                        <a href="#" class="btn btn-primary">Descargar Informe Completo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer">
+      <div class="footer-section">
+        <img src="../assets/logo/logo.png" alt="Logo Dirección de Estadística y Censo" class="footer-logo">
+        <span class="footer-title">Dirección de Estadística y Censo</span>
+        <span>Provincia de Santiago del Estero</span>
+        <span>Av. Belgrano Sur 191 - (4200) Santiago del Estero</span>
+        <span>Tel: (0385) 421-9003 / 421-3169</span>
+        <span>Email: direcciondeestadisticaysc@gmail.com</span>
+        <br>
+      </div>
+     
+      <div class="footer-section">
+        
+        <br>
+        <span class="footer-title">ORGANISMOS PÚBLICOS PROVINCIALES</span>
+        <span>Gobernación</span>
+        <span>Ministerio de Gobierno</span>
+        <span>Ministerio de Educación</span>
+        <div>
+          
+          <span>Ministerio de Salud</span>
+          <span>Ministerio de Hacienda</span>
+          <span>Ministerio de Desarrollo Social</span>
+          <span>Ministerio de Producción</span>
+        </div>
+      </div>
+      <div class="footer-section indec-section">
+        <img src="../assets/logo/Indec_logo.png" alt="Logo INDEC" class="footer-logo-indec">
+  
+        <span class="footer-title">Instituto Nacional de Estadística y Censos</span>
+        <span>República Argentina</span>
+      </div>
+  
+    
+    </div>
+              
+    </div>
+  
+    <div class="arrow" id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+      <img id="scrollArrow" src="../assets/interfase/flecha-arriba.png" alt="Subir" width="40">
+    </div>
+    <script>
+      const toggleBtn = document.getElementById('toggleThemeBtn');
+      const scrollArrow = document.getElementById('scrollArrow');
+      
+      toggleBtn.addEventListener('click', () => {
+        if(document.body.classList.contains('dark-mode')) {
+          scrollArrow.src = "../assets/interfase/flecha-arriba-blanco.png";
+        } else {
+          scrollArrow.src = "../assets/interfase/flecha-arriba.png";
+        }
+      });
+    </script>
+</body>
+</html>
