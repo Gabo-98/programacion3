@@ -1,2 +1,2 @@
-# programacion3
-tp de programacion 3
+# Ejemplo codigo pp
+tp Ing. software
